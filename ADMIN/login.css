@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+    background-color: grey;
+
+}
+.container{
+    overflow: hidden;
+    background-color: #444;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-bottom-right-radius: 10em;
+    border-bottom-left-radius: 10em;
+    border-bottom: #00f2fa solid;
+    height: 20%;
+    animation-duration: 1s;
+    animation-name: slideIn;
+
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    animation-duration: 5s;
+    animation-name: slideIn;
+}
+.highlight{
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+.home{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+  }
+
+  .home a{
+    color: #fff;
+    text-decoration: none;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #191919;
+  }
+
+  .home a:hover{
+    background-color: #00f2fa;
+    transition: all 1s ease 0s;
+  }
+
+p{
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation-duration: 2s;
+    animation-name: flipInX;
+}
+.form{
+   font-family: "Roboto", sans-serif;
+   position: relative;
+   z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 99%;
+    max-width: 400px;
+    margin: 100px auto 100px;
+    padding: 50px 45px 50px 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-top-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+.form .input-group input{
+    outline: 0;
+    border-top-right-radius: 5em;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form .input-group input:hover{
+    background: #00f2fa;
+    transition: all 1s ease 0s;
+}
+
+.form button{
+    border:0;
+    text-transform: uppercase;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 20px 60px;
+    text-align: center;
+    border: 2px solid #00f521;
+    outline: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+.form button:hover{
+    background: #00f521;
+    transition: all 1s ease 0s;
+}
+
+@keyframes slideIn {
+    from{
+        margin-left: 90%;
+        text-align: center;
+        max-height: 150px;
+    } 
+    to{
+        margin-left: 10%;
+        text-align: center;
+        max-height: 150px;
+    }
+}
+@keyframes flipInX {
+    from{
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    to{
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+}
+    

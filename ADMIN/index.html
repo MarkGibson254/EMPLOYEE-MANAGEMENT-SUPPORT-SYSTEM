@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Manager Login</title>
+        <link rel = "icon" href ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvMcNqJlWz-Jw2q7xtoQV8Ju0EjSMTAmcysw&usqp=CAU"type = "image/x-icon">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fontawesome.com/icons/user?style=solid">
+        <link rel="stylesheet" href="login.css">
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <h1><span class="highlight">Manager  Panel</span></h1>
+                </div>
+                <div class="home">
+                    <a href="../login.html">Employee Login</a>
+                </div>
+            </div>
+        </header>
+        <div class="form">
+        <form action="login.php" method="post">
+            <p> Log in</p>
+            <div class="input-group">
+            <input type="text" name="username" id="username" placeholder="Username:" required />
+        </div>
+            <br />
+            <div class="input-group">
+            <input type="password" name="password" id="password" placeholder="Password" required />
+        </div>
+            <br />
+            <button>
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Login</span>
+            </button>
+        </form>
+    </div>
+    </body>
