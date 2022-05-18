@@ -36,12 +36,12 @@ if(isset($_POST['report'])){
     {
         function Header()
         {
-            $this->image('logo.jpg',10,6,30);
+            $this->image('logo.jpg',10,5,30);
             $this->SetFont('Arial','B',15);
             $this->Cell(80);
-            $this->Cell(30,10,'EMMPLOYEE MANAGEMENT SUPPORT SYSTEM',1,0,'C');
-            $this->Ln(20);
-            $this->Cell(80,10,'LEAVE REPORT',1,0,'C');            
+            $this->Cell(140,10,'EMPLOYEE MANAGEMENT SUPPORT SYSTEM',1,0,'C');
+            $this->Ln(50);
+            $this->Cell(190,10,'ALL EMPLOYEE LEAVES REPORT',1,0,'C');            
             $this->Ln(20);
         }
         function Footer()
