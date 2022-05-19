@@ -1,6 +1,6 @@
 <?php
 require('auth.php');
-require_once('C:/xampp/htdocs/@project/dbh.php');
+require_once ('dbh.php');
 $id = (isset($_GET['id']) ? $_GET['id'] : '');
 
 $sql = "SELECT * from `employee` WHERE id=$id";
@@ -91,6 +91,11 @@ $empName = ($employee['firstName']);
 
 
         ?>
+        <?php
+        if (mysqli_num_rows($result) == 0) {
+          echo "<tr><td colspan='10'><center>No Leave yet requested</center></td></tr>";
+      }
+      ?>
 
 
     </table>

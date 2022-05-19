@@ -1,6 +1,6 @@
 <?php
 require('auth.php');
-require_once ('C:/xampp/htdocs/@project/dbh.php');
+require_once ('dbh.php');
 $sql = "SELECT * FROM `employee` WHERE 1";
 
 //echo "$sql";
@@ -11,7 +11,7 @@ if(isset($_POST['update']))
   $id = $_POST['id'];
   $old = $_POST['oldpass'];
   $new = $_POST['confirmpass'];
-  
+
   $result1 = mysqli_query($conn, "select employee.password from employee WHERE id = $id");
      $employee = mysqli_fetch_assoc($result1);
           if($old == $employee['password'])
@@ -52,7 +52,7 @@ if(isset($_POST['update']))
   <link rel = "icon" href ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvMcNqJlWz-Jw2q7xtoQV8Ju0EjSMTAmcysw&usqp=CAU"type = "image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="myprofile.css" rel="stylesheet" media="all">
-  <script src="elogin/passchange.js"></script>
+  <script src="passchange.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta http-equiv="refresh" content="300;url=logout.php" />
   </head>
@@ -97,19 +97,47 @@ if(isset($_POST['update']))
                 <div class="col-2">
                     <div class="input-group">
                         <p>New password</p>
-                        <input class="input--style-1" type="password" name="newpass" >
+                        <input class="input--style-1" type="password" name="newpass" id="password1" >
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="input-group">
                         <p>Confirm password</p>
-                        <input class="input--style-1" type="password" name="confirmpass" >
+                        <input class="input--style-1" type="password" name="confirmpass" id="password2" >
                     </div>
+                    <h3 id="verifynote" class="warn hidden">Passwords do not match</h3>
                 <input type="hidden" name="id" id="textField" value="<?php echo $id;?>" ><br><br>
                 <div class="finish">
                     <button class="btn--radius-2 btn--red" type="submit" name="update">Update </button>
                 </div>
             </div>
             </div>
+          </form>
+        </div>
+      </div>
+      <style>
+        .warn{
+          color:red;
+          border:2px solid red;
+          border-radius:5px;
+          background-color: #fcc;
+        }
+        .hidden{
+          display:none;
+        }
+
+      </style>
+      <script>
+        $document.ready(function() {
+    $(#password2).keyup(function() {
+        if( $(this).val() == $(#password1).val() ) {
+            $('#verifynote').addclass('hidden');
+        }
+        else {
+            $('#verifynote').removeclass('hidden');
+        }
+    });
+});
+      </script>
 </body>
 </html>

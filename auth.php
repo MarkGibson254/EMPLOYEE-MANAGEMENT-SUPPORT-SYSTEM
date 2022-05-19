@@ -10,7 +10,10 @@
 	elseif($_SESSION["id"] != $empid)
 	{
 		header("Location: login.html");
+	}
+	elseif($_SESSION["loggedin"] == false)
+	{
+		header("Location: login.html");
 		exit();
 	}
-	
-?>
+	?>

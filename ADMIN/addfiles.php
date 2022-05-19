@@ -1,7 +1,7 @@
 <?php
 //Authetication of login
 require('auth.php');
-require_once 'C:/xampp/htdocs/@project/dbh.php';
+require_once '../dbh.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

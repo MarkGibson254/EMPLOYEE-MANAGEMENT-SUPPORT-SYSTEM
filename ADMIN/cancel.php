@@ -1,5 +1,5 @@
 <?php
-require ('C:/xampp/htdocs/@project/dbh.php');
+require ('../dbh.php');
 $token = (isset($_GET['token']) ? $_GET['token'] : '');
 $status='Rejected';
 $sql = "SELECT * from `leave_process` WHERE token=$token";
@@ -29,7 +29,7 @@ $sql = "SELECT * from `leave_process` WHERE token=$token";
                 
             <div class="input-group">
                 <p>Reason for rejection</p>
-                <input class="input--style-2" type="text" autocomplete="off" name="Areason" value=<?php echo $Areason?> >
+                <input class="input--style-2" type="text" autocomplete="off" name="Areason" value=<?php echo $Areason?> required >
             </div>
             <div class="divider"></div>
             <button class="btn" type="submit" name="update">Reject</button>

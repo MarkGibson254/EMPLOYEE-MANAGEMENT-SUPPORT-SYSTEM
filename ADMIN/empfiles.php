@@ -1,6 +1,6 @@
 <?php
 require('auth.php');
-require_once('C:/xampp/htdocs/@project/dbh.php');
+require_once ('../dbh.php');
 $sql=('SELECT *  FROM `employee`,`files` where employee.id=files.id');
 $result = mysqli_query($conn, $sql);
 $employee = mysqli_fetch_all($result,MYSQLI_ASSOC);

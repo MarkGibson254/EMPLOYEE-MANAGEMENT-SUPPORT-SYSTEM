@@ -2,7 +2,7 @@
 //Authetication of login
 require('auth.php');
 
-require_once 'C:/xampp/htdocs/@project/dbh.php';
+require_once ('../dbh.php');
 
 //$sql = "SELECT * from `leave_process`";
 $sql = "Select employee.id, employee.firstName, employee.lastName, leave_process.start, leave_process.end, leave_process.reason, leave_process.status,leave_process.Areason, leave_process.token From employee, leave_process Where employee.id = leave_process.id order by employee.id";

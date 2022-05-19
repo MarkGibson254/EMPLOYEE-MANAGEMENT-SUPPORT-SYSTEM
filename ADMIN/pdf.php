@@ -1,42 +1,14 @@
 <?php
 ob_start();
 require('FPDF/fpdf.php');
-require_once 'C:/xampp/htdocs/@project/dbh.php';
-require_once 'C:/xampp/htdocs/@project/ADMIN/viewleave.php';
-class PDF extends FPDF
-{
-// Page header
-function Header()
-{
-    // Logo
-    $this->Image('logo.jpg',10,6,30);
-    // Arial bold 15
-    $this->SetFont('Arial','B',15);
-    // Move to the right
-    $this->Cell(80);
-    // Title
-    $this->Cell(30,10,'LEAVE STATUS',1,0,'C');
-    // Line break
-    $this->Ln(20);
-}
-
-// Page footer
-function Footer()
-{
-    // Position at 1.5 cm from bottom
-    $this->SetY(-15);
-    // Arial italic 8
-    $this->SetFont('Arial','I',8);
-    // Page number
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
-}
-}
+require_once ('../dbh.php');
+require_once 'viewleave.php';
 if(isset($_POST['report'])){
     class MG extends FPDF
     {
         function Header()
         {
-            $this->image('logo.jpg',10,5,30);
+            $this->image('logo.jpg',20,10,30);
             $this->SetFont('Arial','B',15);
             $this->Cell(80);
             $this->Cell(140,10,'EMPLOYEE MANAGEMENT SUPPORT SYSTEM',1,0,'C');
@@ -67,8 +39,8 @@ if(isset($_POST['report'])){
     $pdf->Cell(40,10,'Name',1,0,'C');
     $pdf->Cell(40,10,'Start Date',1,0,'C');
     $pdf->Cell(40,10,'End Date',1,0,'C');
-    $pdf->Cell(10,10,'T.Days',1,0,'C');
-    $pdf->Cell(60,10,'Reason',1,0,'C');
+    $pdf->Cell(20,10,'T.Days',1,0,'C');
+    $pdf->Cell(50,10,'Reason',1,0,'C');
     $pdf->Cell(30,10,'Status',1,0,'C');
     $pdf->Cell(50,10,'M.Comments',1,0,'C');
     $pdf->Ln();
@@ -80,8 +52,8 @@ if(isset($_POST['report'])){
         $pdf->Cell(40,10,$row['firstName'].' '.$row['lastName'],1,0,'C');
         $pdf->Cell(40,10,$row['start'],1,0,'C');
         $pdf->Cell(40,10,$row['end'],1,0,'C');
-        $pdf->Cell(10,10,$interval->days,1,0,'C');
-        $pdf->Cell(60,10,$row['reason'],1,0,'C');
+        $pdf->Cell(20,10,$interval->days,1,0,'C');
+        $pdf->Cell(50,10,$row['reason'],1,0,'C');
         $pdf->Cell(30,10,$row['status'],1,0,'C');
         $pdf->MultiCell(50,10,$row['Areason'],1,0,'C');
         $pdf->Ln();

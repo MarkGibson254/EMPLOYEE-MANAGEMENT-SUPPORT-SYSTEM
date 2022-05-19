@@ -1,5 +1,5 @@
 <?php
-include ('C:/xampp/htdocs/@project/dbh.php');
+include ('../dbh.php');
 $token = $_GET['token'];
 $sql = "SELECT token,status,Areason FROM `leave_process` WHERE token = '$token'";
 

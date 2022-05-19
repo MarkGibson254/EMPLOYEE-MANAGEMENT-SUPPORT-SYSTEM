@@ -1,6 +1,6 @@
 <?php
 
-require_once ('C:/xampp/htdocs/@project/dbh.php');
+require_once ('../dbh.php');
 
 $firstname = $_POST['firstName'];
 $lastName = $_POST['lastName'];
@@ -18,6 +18,8 @@ $province = $_POST['province'];
 $emergencycontact = $_POST['emergencycontact'];
 
 
+
+
 //image uploading
 $files = $_FILES['file'];
 $filename = $files['name'];
@@ -27,6 +29,14 @@ $fileext = explode('.', $filename);
 $filecheck = strtolower(end($fileext));
 $fileextstored = array('png' , 'jpg' , 'jpeg');
 
+$sql=mysqli_query($conn,"SELECT * FROM employee WHERE email='$email'");
+$row=mysqli_num_rows($sql);
+if($row>0){
+    echo "<script>
+    alert('Email already exists')
+    window.location.href='javascript:history.go(-1)';
+    </script>";
+}
 if(in_array($filecheck, $fileextstored)){
 
     $destinationfile = 'images/'.$filename;

@@ -1,6 +1,6 @@
 <?php
 require ('auth.php');
-require_once('C:/xampp/htdocs/@project/dbh.php');
+require_once ('dbh.php');
 $id = (isset($_GET['id']) ? $_GET['id'] : '');
 $sql = "SELECT * from `employee` WHERE id=$id";
 $result = mysqli_query($conn, $sql);
@@ -67,8 +67,11 @@ $empName = ($employee['firstName'] . ' ' . $employee['lastName']);
             <td><a href="filing.php?id=<?php echo $file['per_id'] ?>"><p>Download</p></a></td>
           </tr>
         <?php endforeach;?>
-        
-
+        <?php
+        if (mysqli_num_rows($result) == 0) {
+          echo "<tr><td colspan='10'><center>No Documents uploaded yet</center></td></tr>";
+      }
+      ?>
     </table>
     <div class="divider"></div>
 

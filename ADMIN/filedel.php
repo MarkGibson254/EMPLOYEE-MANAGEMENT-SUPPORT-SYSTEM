@@ -1,6 +1,6 @@
 <?php
 //including the database connection file
-include("C:/xampp/htdocs/@project/dbh.php");
+include("../dbh.php");
 
 echo ("Are you sure you want to delete this employee?");
 

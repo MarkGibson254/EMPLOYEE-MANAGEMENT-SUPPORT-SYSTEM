@@ -1,7 +1,7 @@
 <?php
 //Authetication of login
 require('auth.php');
-require_once 'C:/xampp/htdocs/@project/dbh.php';
+require_once '../dbh.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -95,7 +95,7 @@ window.onclick = function(e) {
                 </div>
                 <div class="form-group right">
                     <label>Gender</label><br>
-                    <select>
+                    <select name="gender">
                         <option>Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>

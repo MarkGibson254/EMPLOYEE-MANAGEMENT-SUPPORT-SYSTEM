@@ -2,7 +2,7 @@
 $id = (isset($_GET['id']) ? $_GET['id'] : '');
 ob_start();
 require('FPDF/fpdf.php');
-require_once 'C:/xampp/htdocs/@project/dbh.php';
+require_once ('dbh.php');
 $id = (isset($_GET['id']) ? $_GET['id'] : '');
 class PDF extends FPDF
 {

@@ -1,6 +1,6 @@
 <?php
 
-require_once ('C:/xampp/htdocs/@project/dbh.php');
+require_once ('dbh.php');
 $sql="SELECT * FROM `employee` WHERE 1";
 $result = mysqli_query($conn, $sql);
 $eid = (isset($_GET['id']) ? $_GET['id'] : '');

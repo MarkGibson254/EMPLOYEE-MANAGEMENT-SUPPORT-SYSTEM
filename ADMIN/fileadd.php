@@ -1,5 +1,5 @@
 <?php
-require 'C:/xampp/htdocs/@project/dbh.php';
+require '../dbh.php';
 
 if (isset($_POST['upload'])) {
 $conn = new PDO("mysql:host=localhost;dbname=project", "root", "");

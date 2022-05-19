@@ -1,6 +1,6 @@
 <?php
 // Downloads files per employee
-require_once('C:/xampp/htdocs/@project/dbh.php');
+require_once ('dbh.php');
 //Selecting the file 
 $sql="select file_name,per_id,filetype,date_uploaded,content from files where per_id=".$_GET['id'];
 $result=mysqli_query($conn,$sql);

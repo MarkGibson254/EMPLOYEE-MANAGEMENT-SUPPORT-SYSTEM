@@ -1,7 +1,7 @@
 <?php
 require('auth.php');
 
-require_once 'C:/xampp/htdocs/@project/dbh.php';
+require_once ('../dbh.php');
 
 //$sql = "SELECT * from `leave_process`";
 $sql = "SELECT * from `leave_process`, `employee` Where leave_process.status = 'Pending' and leave_process.id = employee.id order by employee.id";

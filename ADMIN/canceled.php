@@ -1,5 +1,5 @@
 <?php
-include ('C:/xampp/htdocs/@project/dbh.php');
+include ('../dbh.php');
 $sql = "SELECT * FROM `leave_process` WHERE 1";
 
 $result = mysqli_query($conn, $sql);

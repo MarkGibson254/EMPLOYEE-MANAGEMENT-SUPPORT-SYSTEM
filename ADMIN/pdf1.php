@@ -1,8 +1,8 @@
 <?php
 ob_start();
 require('FPDF/fpdf.php');
-require_once 'C:/xampp/htdocs/@project/dbh.php';
-require_once 'C:/xampp/htdocs/@project/ADMIN/report.php';
+require_once ('../dbh.php');
+require_once 'report.php';
 if(isset($_POST['report'])){
     class MG extends FPDF
     {

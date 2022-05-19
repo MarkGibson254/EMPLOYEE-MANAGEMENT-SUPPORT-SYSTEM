@@ -91,6 +91,13 @@ th, td {
 td{
     color: white;
 }
+td a {
+    color: white;
+}
+td a:hover {
+    color: green;
+    transition: 0.5s;
+}
 th {
   background-color: #6143e8;
   color: white;
